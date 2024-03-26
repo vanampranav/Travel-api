@@ -25,7 +25,9 @@ public class CountryController {
         return countryService.getCountryDetailsByName(name);
     }
 
-    @PatchMapping("/updateCountry")
+
+
+    @PatchMapping("/patchCountry")
     public Country updateCountryDetails(@RequestBody Country country){
 
         return countryService.updateDetails(country);
