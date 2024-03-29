@@ -1,9 +1,9 @@
-package com.Travelsapi.Travels.Destination.Service;
+package com.Travelsapi.Travels.locations.destinations.Service;
 
 
-import com.Travelsapi.Travels.Destination.Repositories.DestinationRepository;
-import com.Travelsapi.Travels.Destination.models.Destination;
-import com.Travelsapi.Travels.Destination.models.DestinationCsvRepresentation;
+import com.Travelsapi.Travels.locations.destinations.Repositories.DestinationRepository;
+import com.Travelsapi.Travels.locations.destinations.models.Destination;
+import com.Travelsapi.Travels.locations.destinations.models.DestinationCsvRepresentation;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
@@ -18,7 +18,6 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.nio.Buffer;
 
 @Service
 @RequiredArgsConstructor
@@ -32,9 +31,9 @@ public class DestinationService {
         return repository.save(destination);
     }
 
-    public Destination getDestinationDetailsByName(String name){
+    public Destination getDestinationDetailsByName(int id){
 
-        return repository.findByName(name);
+        return repository.findAllById(int id);
     }
 
     public Destination updateDetails(Destination destination){

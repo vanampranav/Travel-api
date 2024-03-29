@@ -1,4 +1,4 @@
-package com.Travelsapi.Travels.Countries.models;
+package com.Travelsapi.Travels.locations.countries.models;
 
 import jakarta.persistence.*;
 import lombok.Data;

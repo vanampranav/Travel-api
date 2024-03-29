@@ -1,4 +1,4 @@
-package com.Travelsapi.Travels.Destination.models;
+package com.Travelsapi.Travels.locations.destinations.models;
 
 
 import com.opencsv.bean.CsvBindByName;

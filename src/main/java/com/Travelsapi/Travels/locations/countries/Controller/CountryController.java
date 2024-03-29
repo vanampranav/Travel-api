@@ -1,12 +1,10 @@
-package com.Travelsapi.Travels.Countries.Controller;
+package com.Travelsapi.Travels.locations.countries.Controller;
 
 
-import com.Travelsapi.Travels.Countries.Service.CountryService;
-import com.Travelsapi.Travels.Countries.models.Country;
+import com.Travelsapi.Travels.locations.countries.Service.CountryService;
+import com.Travelsapi.Travels.locations.countries.models.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 public class CountryController {
@@ -14,13 +12,13 @@ public class CountryController {
     @Autowired
     private CountryService countryService;
 
-    @PostMapping("/addCountry")
-    public Country postDetails(@RequestBody Country country){
+    @PostMapping("/add")
+    public Country postDetails(@RequestBody Country country) {
 
         return countryService.saveDetails(country);
     }
 
-    @GetMapping("/getCountryByNAME/{name}")
+    @GetMapping("/{name}")
     public Country fetchDetailsById(@PathVariable String name){
         return countryService.getCountryDetailsByName(name);
     }
@@ -28,7 +26,7 @@ public class CountryController {
 
 
     @PatchMapping("/patchCountry")
-    public Country updateCountryDetails(@RequestBody Country country){
+    public Country updateCountryDetails(@RequestBody Country country) {
 
         return countryService.updateDetails(country);
     }
