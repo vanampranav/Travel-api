@@ -31,9 +31,9 @@ public class DestinationService {
         return repository.save(destination);
     }
 
-    public Destination getDestinationDetailsByName(int id){
+    public Destination getDestinationDetailsByName(String name){
 
-        return repository.findAllById(int id);
+        return repository.findByName(name);
     }
 
     public Destination updateDetails(Destination destination){
