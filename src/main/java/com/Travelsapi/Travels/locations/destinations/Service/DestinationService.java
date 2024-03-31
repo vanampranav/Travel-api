@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -31,9 +32,14 @@ public class DestinationService {
         return repository.save(destination);
     }
 
-    public Destination getDestinationDetailsByName(String name){
+    public Destination getDestinationDetailsByName(int id){
 
-        return repository.findByName(name);
+        final Optional<Destination> optionalDestination = repository.findById(id);
+        if(optionalDestination.isEmpty()) {
+            //  IOException()
+        }
+        return optionalDestination.get();
+
     }
 
     public Destination updateDetails(Destination destination){
@@ -85,4 +91,6 @@ public class DestinationService {
 
         }
     }
+
+
 }
