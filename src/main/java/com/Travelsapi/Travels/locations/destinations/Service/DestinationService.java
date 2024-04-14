@@ -8,6 +8,7 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,15 +33,37 @@ public class DestinationService {
         return repository.save(destination);
     }
 
-    public Destination getDestinationDetailsByName(int id){
+   /* public Destination getDestinationDetailsByName(String name){
 
-        final Optional<Destination> optionalDestination = repository.findById(id);
+        final Optional<Destination> optionalDestination = repository.findByName();
         if(optionalDestination.isEmpty()) {
             //  IOException()
         }
         return optionalDestination.get();
 
     }
+
+    */
+    public Destination getDestinationDetailsByName(String name) {
+
+        String tempname = DestinationService.slugify(name);
+        return repository.findByName(tempname);
+    }
+
+
+
+
+        public static String slugify(String input) {
+            if (input == null) {
+                return null;
+            }
+            String slug = input.trim().toLowerCase().replaceAll("\\s+", "-");
+            return StringUtils.stripAccents(slug);
+        }
+
+
+
+
 
     public Destination updateDetails(Destination destination){
 
@@ -77,14 +100,14 @@ public class DestinationService {
             return csvToBean.parse().stream().map(csvLine -> Destination.builder()
                     .name(csvLine.getName())
                     .destinationType(csvLine.getDestinationType())
-                            .country(csvLine.getCountry())
-                            .country_id(csvLine.getCountry_id())
-                            .parentDestinationName(csvLine.getParentDestinationName())
-                            .parentDestinationId(csvLine.getParentDestinationId())
+                            //.country(csvLine.getCountry())
+                            //.country_id(csvLine.getCountry_id())
+                            //.parentDestinationName(csvLine.getParentDestinationName())
+                            //.parentDestinationId(csvLine.getParentDestinationId())
                             .latitude(csvLine.getLatitude())
                             .longitude(csvLine.getLongitude())
-                            .createdAt(csvLine.getCreatedAt())
-                            .updatedAt(csvLine.getUpdatedAt())
+                            //.createdAt(csvLine.getCreatedAt())
+                           // .updatedAt(csvLine.getUpdatedAt())
                             .build()
                     ).collect(Collectors.toSet());
 

@@ -1,6 +1,7 @@
 package com.Travelsapi.Travels.locations.destinations.models;
 
 
+import com.Travelsapi.Travels.locations.countries.models.Country;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,15 +21,16 @@ public class Destination {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
-
     private String name;
     private String destinationType;
-    private String country;
-    private String country_id;
-    private String parentDestinationName;
-    private String parentDestinationId;
+    //private String country;
+    //private String country_id;
+    //private String parentDestinationName;
+    //private String parentDestinationId;
     private Double latitude;
     private Double longitude;
     private Date createdAt;
     private Date updatedAt;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Country country;
 }

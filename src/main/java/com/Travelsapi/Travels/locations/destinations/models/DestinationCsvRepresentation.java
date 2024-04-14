@@ -17,7 +17,7 @@ public class DestinationCsvRepresentation {
     private String name;
     @CsvBindByName(column = "Destination_Type")
     private String destinationType;
-    @CsvBindByName(column = "Country")
+   /* @CsvBindByName(column = "Country")
     private String country;
     @CsvBindByName(column = "Country_ID")
     private String country_id;
@@ -25,13 +25,15 @@ public class DestinationCsvRepresentation {
     private String parentDestinationName;
     @CsvBindByName(column = "Parent_Destination_Id")
     private String parentDestinationId;
+
+    */
     @CsvBindByName(column = "Latitude")
     private Double latitude;
     @CsvBindByName(column = "Longitude")
     private Double longitude;
-    @CsvBindByName(column = "Created_At")
-    private Date createdAt;
-    @CsvBindByName(column = "Updated_At")
-    private Date updatedAt;
+   // @CsvBindByName(column = "Created_At")
+    //private Date createdAt;
+    //@CsvBindByName(column = "Updated_At")
+    //private Date updatedAt;
 
 }

@@ -16,21 +16,19 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/destinations")
 @RequiredArgsConstructor
-
 public class DestinationController {
-
     @Autowired
     private DestinationService destinationService;
 
-    @PostMapping
+    @PostMapping("/post")
     public Destination postDetails(@RequestBody Destination destination) {
 
         return destinationService.saveDetails(destination);
     }
 
-    @GetMapping("/{id}")
-    public Destination getDetailsByName(@PathVariable int id) {
-       return destinationService.getDestinationDetailsByName(id);
+    @GetMapping("/{name}")
+    public Destination getDetailsByName(@PathVariable String name) {
+       return destinationService.getDestinationDetailsByName(name);
     }
 
     @PatchMapping("/{name}")
