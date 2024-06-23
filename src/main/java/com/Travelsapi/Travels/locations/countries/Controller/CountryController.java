@@ -22,7 +22,7 @@ public class CountryController {
     }
 
     @GetMapping("/{name}")
-    public Country fetchDetailsById(@PathVariable String name){
+    public Country fetchDetailsByName(@PathVariable String name){
         return countryService.getCountryDetailsByName(name);
     }
 
