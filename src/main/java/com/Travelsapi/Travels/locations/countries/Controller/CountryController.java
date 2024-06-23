@@ -15,22 +15,13 @@ public class CountryController {
     @Autowired
     private CountryService countryService;
 
-    @PostMapping("/add")
-    public Country postDetails(@RequestBody Country country) {
-
-        return countryService.saveDetails(country);
-    }
-
     @GetMapping("/{name}")
-    public Country fetchDetailsByName(@PathVariable String name){
+    public Country getCountryByName(@PathVariable String name){
         return countryService.getCountryDetailsByName(name);
     }
 
-
-
-    @PatchMapping("/patchCountry")
+    @PutMapping("/")
     public Country updateCountryDetails(@RequestBody Country country) {
-
         return countryService.updateDetails(country);
     }
 
