@@ -1,5 +1,6 @@
 package com.Travelsapi.Travels.packages.custom.models;
 
+import com.Travelsapi.Travels.locations.destinations.models.Destination;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -36,4 +37,12 @@ public class TourPackage {
 
     @OneToMany(mappedBy = "tourPackage", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Promotion> promotions;
+
+    @ManyToMany
+    @JoinTable(
+            name = "tour_package_destinations",
+            joinColumns = @JoinColumn(name = "tour_package_id"),
+            inverseJoinColumns = @JoinColumn(name = "destination_id")
+    )
+    private List<Destination> destinations;
 }

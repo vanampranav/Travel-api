@@ -2,6 +2,7 @@ package com.Travelsapi.Travels.locations.destinations.models;
 
 
 import com.Travelsapi.Travels.locations.countries.models.Country;
+import com.Travelsapi.Travels.packages.custom.models.TourPackage;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -33,4 +35,7 @@ public class Destination {
     private Date updatedAt;
     @ManyToOne(fetch = FetchType.LAZY)
     private Country country;
+
+    @ManyToMany(mappedBy = "destinations")
+    private List<TourPackage> tourPackages;
 }
