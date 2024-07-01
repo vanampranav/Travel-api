@@ -1,7 +1,7 @@
-package com.Travelsapi.Travels.packages.customizedpackage.controller;
+package com.Travelsapi.Travels.packages.custom.controller;
 
-import com.Travelsapi.Travels.packages.customizedpackage.models.Itinerary;
-import com.Travelsapi.Travels.packages.customizedpackage.service.ItineraryService;
+import com.Travelsapi.Travels.packages.custom.models.Itinerary;
+import com.Travelsapi.Travels.packages.custom.service.ItineraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

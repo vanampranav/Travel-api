@@ -22,18 +22,18 @@ public class DestinationController {
 
     @PostMapping("/post")
     public Destination postDetails(@RequestBody Destination destination) {
-
         return destinationService.saveDetails(destination);
     }
 
     @GetMapping("/{name}")
-    public Destination getDetailsByName(@PathVariable String name) {
+    public Destination getByName(@PathVariable String name) {
        return destinationService.getDestinationDetailsByName(name);
     }
 
-    @PatchMapping("/{name}")
-    public Destination updateDestinationDetails(@RequestBody Destination destination) {
+    //ToDo: getById
 
+    @PutMapping("/{name}")
+    public Destination updateDestinationDetails(@RequestBody Destination destination) {
         return destinationService.updateDetails(destination);
     }
 
@@ -42,5 +42,5 @@ public class DestinationController {
         return ResponseEntity.ok(destinationService.uploadDestinations(file));
     }
 
-
+    // ToDo: Do not allow null values in Destinations table
 }

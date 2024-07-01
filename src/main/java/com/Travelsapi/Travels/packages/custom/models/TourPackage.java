@@ -1,4 +1,4 @@
-package com.Travelsapi.Travels.packages.customizedpackage.models;
+package com.Travelsapi.Travels.packages.custom.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,7 +8,6 @@ import java.util.List;
 @Entity
 @Data
 public class TourPackage {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +19,7 @@ public class TourPackage {
     private Double total_price;
     private String status;
 
+    // Change variable names to plural wherever necessary
     @Lob
     @Column(columnDefinition = "LONGTEXT")
     private String inclusion;
@@ -36,6 +36,4 @@ public class TourPackage {
 
     @OneToMany(mappedBy = "tourPackage", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Promotion> promotions;
-
-
 }

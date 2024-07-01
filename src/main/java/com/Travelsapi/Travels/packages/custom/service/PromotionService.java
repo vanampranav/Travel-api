@@ -1,8 +1,8 @@
-package com.Travelsapi.Travels.packages.customizedpackage.service;
+package com.Travelsapi.Travels.packages.custom.service;
 
 
-import com.Travelsapi.Travels.packages.customizedpackage.models.Promotion;
-import com.Travelsapi.Travels.packages.customizedpackage.repository.PromotionRepository;
+import com.Travelsapi.Travels.packages.custom.models.Promotion;
+import com.Travelsapi.Travels.packages.custom.repository.PromotionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

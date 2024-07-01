@@ -20,6 +20,7 @@ public class CountryController {
         return countryService.getCountryDetailsByName(name);
     }
 
+    // Todo: Update this
     @PutMapping("/")
     public Country updateCountryDetails(@RequestBody Country country) {
         return countryService.updateDetails(country);
@@ -35,4 +36,6 @@ public class CountryController {
         countryService.saveDetails(country);
         return destinations;
     }
+
+    // ToDO: Get destinations based on country
 }

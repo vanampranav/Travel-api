@@ -1,7 +1,8 @@
-package com.Travelsapi.Travels.packages.customizedpackage.service;
+package com.Travelsapi.Travels.packages.custom.service;
 
-import com.Travelsapi.Travels.packages.customizedpackage.models.Itinerary;
-import com.Travelsapi.Travels.packages.customizedpackage.repository.ItineraryRepository;
+import com.Travelsapi.Travels.locations.destinations.Service.DestinationService;
+import com.Travelsapi.Travels.packages.custom.models.Itinerary;
+import com.Travelsapi.Travels.packages.custom.repository.ItineraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class ItineraryService {
 
         return itineraryRepository.findById(id).orElse(null);
     }
+
     public Itinerary saveItinerary(Itinerary itinerary) {
 
         return itineraryRepository.save(itinerary);

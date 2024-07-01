@@ -1,4 +1,4 @@
-package com.Travelsapi.Travels.packages.customizedpackage.models;
+package com.Travelsapi.Travels.packages.custom.models;
 
 
 import jakarta.persistence.*;
