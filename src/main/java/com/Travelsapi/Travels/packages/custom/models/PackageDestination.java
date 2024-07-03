@@ -2,8 +2,10 @@ package com.Travelsapi.Travels.packages.custom.models;
 
 
 import com.Travelsapi.Travels.locations.destinations.models.Destination;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 @Data
 @Entity
@@ -22,4 +24,8 @@ public class PackageDestination {
     private Destination destination;
 
     private int no_of_nights;
+
+
+    @Column(columnDefinition = "jsonb")
+    private String attractions;
 }
