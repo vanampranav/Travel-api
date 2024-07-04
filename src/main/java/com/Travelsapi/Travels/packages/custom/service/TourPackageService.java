@@ -30,4 +30,22 @@ public class TourPackageService {
 
         tourPackageRepository.deleteById(id);
     }
+
+    public TourPackage updateInclusion(int id, byte[] inclusion) {
+        TourPackage tourPackage = tourPackageRepository.findById(id).orElse(null);
+        if (tourPackage != null) {
+            tourPackage.setInclusion(inclusion);
+            tourPackageRepository.save(tourPackage);
+        }
+        return tourPackage;
+    }
+
+    public TourPackage updateExclusion(int id, byte[] exclusion) {
+        TourPackage tourPackage = tourPackageRepository.findById(id).orElse(null);
+        if (tourPackage != null) {
+            tourPackage.setExclusion(exclusion);
+            tourPackageRepository.save(tourPackage);
+        }
+        return tourPackage;
+    }
 }

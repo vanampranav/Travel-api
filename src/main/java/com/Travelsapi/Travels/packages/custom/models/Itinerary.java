@@ -17,7 +17,6 @@ public class Itinerary {
     @Column(columnDefinition = "TEXT")
     private String description ;
 
-
     @ManyToOne
     @JoinColumn(name = "tour_package_id")
     private TourPackage tourPackage;

@@ -4,6 +4,7 @@ package com.Travelsapi.Travels.packages.custom.models;
 import com.Travelsapi.Travels.locations.destinations.models.Destination;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 @Data
 @Entity
