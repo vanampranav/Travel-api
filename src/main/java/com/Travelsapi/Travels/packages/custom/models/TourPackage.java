@@ -20,7 +20,6 @@ public class TourPackage {
     private Double total_price;
     private String status;
 
-    // Change variable names to plural wherever necessary
     @Lob
     @Column(columnDefinition = "BLOB")
     private byte[] inclusion;
