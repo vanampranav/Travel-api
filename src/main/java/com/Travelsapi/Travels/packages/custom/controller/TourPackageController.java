@@ -45,7 +45,8 @@ public class TourPackageController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TourPackage> updateTourPackage(@PathVariable int id, @RequestBody TourPackage tourPackageDetails) {
+    public ResponseEntity<TourPackage> updateTourPackage
+            (@PathVariable int id, @RequestBody TourPackage tourPackageDetails) {
         TourPackage tourPackage = tourPackageService.getTourPackageById(id);
         if (tourPackage != null) {
             tourPackage.setPackage_name(tourPackageDetails.getPackage_name());
@@ -65,7 +66,8 @@ public class TourPackageController {
     }
 
     @PostMapping("/{id}/inclusion")
-    public ResponseEntity<TourPackage> updateInclusion(@PathVariable int id, @RequestParam("file") MultipartFile file) {
+    public ResponseEntity<TourPackage> updateInclusion
+            (@PathVariable int id, @RequestParam("file") MultipartFile file) {
         try {
             TourPackage tourPackage = tourPackageService.updateInclusion(id, file.getBytes());
             if (tourPackage != null) {
@@ -79,7 +81,8 @@ public class TourPackageController {
     }
 
     @PostMapping("/{id}/exclusion")
-    public ResponseEntity<TourPackage> updateExclusion(@PathVariable int id, @RequestParam("file") MultipartFile file) {
+    public ResponseEntity<TourPackage> updateExclusion
+            (@PathVariable int id, @RequestParam("file") MultipartFile file) {
         try {
             TourPackage tourPackage = tourPackageService.updateExclusion(id, file.getBytes());
             if (tourPackage != null) {
