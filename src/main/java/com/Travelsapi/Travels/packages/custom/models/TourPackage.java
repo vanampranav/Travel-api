@@ -22,12 +22,12 @@ public class TourPackage {
 
     // Change variable names to plural wherever necessary
     @Lob
-    @Column(columnDefinition = "LONGTEXT")
-    private String inclusion;
+    @Column(columnDefinition = "BLOB")
+    private Byte[] inclusion;
 
     @Lob
-    @Column(columnDefinition = "LONGTEXT")
-    private  String exclusion;
+    @Column(columnDefinition = "BLOB")
+    private  Byte[] exclusion;
 
     @OneToMany(mappedBy = "tourPackage", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Itinerary> itineraries;
