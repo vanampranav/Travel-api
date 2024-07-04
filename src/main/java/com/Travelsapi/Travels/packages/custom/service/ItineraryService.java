@@ -31,4 +31,12 @@ public class ItineraryService {
         itineraryRepository.deleteById(id);
     }
 
+    public Itinerary updateItineraryDestinations(int id, List<String> destinationNames) {
+        Itinerary itinerary = itineraryRepository.findById(id).orElse(null);
+        if (itinerary != null) {
+            itinerary.setDestination_name(destinationNames);
+            itineraryRepository.save(itinerary);
+        }
+        return itinerary;
+    }
 }
