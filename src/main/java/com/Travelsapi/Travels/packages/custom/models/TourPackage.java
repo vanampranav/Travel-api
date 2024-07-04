@@ -23,11 +23,11 @@ public class TourPackage {
     // Change variable names to plural wherever necessary
     @Lob
     @Column(columnDefinition = "BLOB")
-    private Byte[] inclusion;
+    private byte[] inclusion;
 
     @Lob
     @Column(columnDefinition = "BLOB")
-    private  Byte[] exclusion;
+    private  byte[] exclusion;
 
     @OneToMany(mappedBy = "tourPackage", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Itinerary> itineraries;
