@@ -1,6 +1,5 @@
 package com.Travelsapi.Travels.locations.destinations.models;
 
-
 import com.opencsv.bean.CsvBindByName;
 import lombok.*;
 

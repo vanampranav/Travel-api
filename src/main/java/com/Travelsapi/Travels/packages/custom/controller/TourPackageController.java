@@ -33,7 +33,7 @@ public class TourPackageController {
         }
     }
 
-    @PostMapping
+    @PostMapping("Post")
     public TourPackage createTourPackage(@RequestBody TourPackage tourPackage) {
         return tourPackageService.saveTourPackage(tourPackage);
     }

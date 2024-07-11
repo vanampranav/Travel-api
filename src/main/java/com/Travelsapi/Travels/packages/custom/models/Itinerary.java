@@ -4,6 +4,7 @@ package com.Travelsapi.Travels.packages.custom.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+
 import java.util.List;
 
 @Entity
@@ -23,6 +24,6 @@ public class Itinerary {
     @JoinColumn(name = "tour_package_id")
     private TourPackage tourPackage;
 
-    @Column(columnDefinition = "jsonb")
+  //  @Column(columnDefinition = "jsonb")
     private List<String> destination_name;
 }

@@ -39,5 +39,4 @@ public class ItineraryController {
         itineraryService.deleteItinerary(id);
         return ResponseEntity.noContent().build();
     }
-
 }
