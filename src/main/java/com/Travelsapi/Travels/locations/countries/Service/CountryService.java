@@ -46,6 +46,4 @@ public class CountryService {
         return country.getDestinations();
     }
 
-
-
 }
