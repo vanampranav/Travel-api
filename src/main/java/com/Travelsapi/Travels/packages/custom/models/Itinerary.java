@@ -24,6 +24,6 @@ public class Itinerary {
     @JoinColumn(name = "tour_package_id")
     private TourPackage tourPackage;
 
-  //  @Column(columnDefinition = "jsonb")
+    @Column(columnDefinition = "JSON")
     private List<String> destination_name;
 }

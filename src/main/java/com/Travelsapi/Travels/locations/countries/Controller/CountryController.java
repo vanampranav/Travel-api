@@ -37,5 +37,8 @@ public class CountryController {
         return destinations;
     }
 
-    // ToDO: Get destinations based on country
+    @GetMapping("/{id}/destinations")
+    public List<Destination> getDestinationsByCountry(@PathVariable int id) {
+        return countryService.getDestinationsByCountryId(id);
+    }
 }

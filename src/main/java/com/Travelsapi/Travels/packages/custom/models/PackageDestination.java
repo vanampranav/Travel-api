@@ -23,6 +23,6 @@ public class PackageDestination {
 
     private int no_of_nights;
 
-//    @Column(columnDefinition = "jsonb")
+    @Column(columnDefinition = "JSON")
     private String attractions;
 }

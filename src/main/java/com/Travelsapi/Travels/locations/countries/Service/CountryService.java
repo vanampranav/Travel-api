@@ -2,9 +2,11 @@ package com.Travelsapi.Travels.locations.countries.Service;
 
 import com.Travelsapi.Travels.locations.countries.Repositories.Repository;
 import com.Travelsapi.Travels.locations.countries.models.Country;
+import com.Travelsapi.Travels.locations.destinations.models.Destination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -39,6 +41,10 @@ public class CountryService {
         return null;
     }
 
+    public List<Destination> getDestinationsByCountryId(int countryId) {
+        Country country = repository.findById(countryId).orElseThrow(() -> new RuntimeException("Country not found"));
+        return country.getDestinations();
+    }
 
 
 
