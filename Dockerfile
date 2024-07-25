@@ -17,7 +17,7 @@ COPY src/ src/
 RUN ./gradlew build -x test
 
 # Expose the port on which the app will run
-EXPOSE 8080
+EXPOSE 8081
 
 # Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "build/libs/Travels-0.0.1-SNAPSHOT.jar"]
