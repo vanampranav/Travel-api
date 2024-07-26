@@ -8,7 +8,9 @@ group = 'com.Travels-api'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+	//sourceCompatibility = '17'
+	sourceCompatibility = JavaVersion.toVersion('17')
+	targetCompatibility = JavaVersion.toVersion('17')
 }
 
 configurations {
@@ -36,4 +38,8 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+bootJar {
+	enabled = true // This is enabled by default, but you can specify it explicitly
 }
